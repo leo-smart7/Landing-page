@@ -1,5 +1,167 @@
-.box {
-    width: 300px;
-    height: 250px;
-    background-color: wheat;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+  line-height: 0;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove all button styles */
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+:root {
+  /* primary */
+  --dark-cyan: hsla(192, 37%, 48%, 1);
+  --dark-violet: hsla(268, 34%, 53%, 1);
+  /* secondary */
+  --light-cyan: hsla(192, 90%, 77%, 1);
+  --light-violet: hsla(268, 100%, 86%, 1);
+  /* neutral */
+  --black: rgb(55, 55, 82);
+  --gray: hsla(240, 10%, 57%, 1);
+  --light-gray: hsla(240, 10%, 57%, 0.25);
+  --white: hsla(0, 0%, 98%, 1);
+  /* buttom hover */
+  --cyan-hover: hsla(192, 54%, 64%, 1);
+  --violet-hover: hsla(268, 55%, 71%, 1);
+}
+
+.hero-section {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 0;
+}
+
+.heading-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.3;
+  text-rendering: optimizeSpeed;
+  font-family: "IBM Plex Sans";
+  background-color: var(--white);
+  margin: 0;
+}
+
+.h1 {
+  font: 900 2.5rem/110% Red Hat Display, serif;
+  color: var(--black);
+  font-size: 4rem;
+  line-height: 110%;
+}
+
+.hero-section p {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: hsl(240, 10%, 57%);
+  line-height: 150%;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  gap: 1.25rem;
+}
+
+.btn-1,
+.btn-2,
+.btn-3 {
+  color: var(--white);
+  font: 900 1rem / 160% "Red Hat Display", serif;
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+}
+
+.btn-2,
+.btn-3 {
+  background-color: var(--dark-violet);
+}
+
+.btn-1 {
+  color: var(--white);
+  font: 900 1rem / 160% "Red Hat Display", serif;
+  background-color: var(--dark-cyan);
+}
+
+.btn-1:hover {
+  background-color: var(--cyan-hover);
+}
+
+.btn-2:hover,
+.btn-3:hover {
+  background-color: var(--violet-hover);
+}
+
+span {
+  color: #90e4f9;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem 0 3.75rem 0;
+}
+
+.meet-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.875rem;
+  flex-direction: row;
+}
+
+.meet-logo:hover {
+  filter: saturate(3);
+}
+
+.meet {
+  order: 2;
+  transition: ease-out 1s;
+}
+
+/* logo hover effect */
+.meet,
+.logo {
+  transition: ease-out 1s;
+}
+
+.logo:hover ~ .meet {
+  transform: rotate(720deg);
+  filter: blur(0.0625rem);
+  transition: cubic-bezier(0.65, 0.05, 0.36, 1) 1s;
+}
+
+.logo:hover {
+  transform: rotate(-720deg);
+  filter: blur(0.0625rem);
+  transition: cubic-bezier(0.65, 0.05, 0.36, 1) 1s;
 }
